@@ -1,0 +1,251 @@
+
+  /offer:
+    get:
+     summary: Get all offers
+     tags: [offer]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/offer'
+ 
+    post:
+      summary: Create offer
+      tags: [offer]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/offer'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/offer'
+ 
+  /offer/{id}:
+    get:
+      summary: Get offer by id
+      tags: [offer]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/offer'
+ 
+    put:
+      summary: Edit offer
+      tags: [offer]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/offer'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/offer'
+ 
+    delete:
+      summary: Delete offer
+      tags: [offer]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/offer'
+
+  /address:
+    get:
+     summary: Get all addresss
+     tags: [address]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/address'
+ 
+    post:
+      summary: Create address
+      tags: [address]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/address'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/address'
+ 
+  /address/{id}:
+    get:
+      summary: Get address by id
+      tags: [address]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/address'
+ 
+    put:
+      summary: Edit address
+      tags: [address]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/address'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/address'
+ 
+    delete:
+      summary: Delete address
+      tags: [address]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/address'
+
+  /user:
+    get:
+     summary: Get all users
+     tags: [user]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/user'
+ 
+    post:
+      summary: Create user
+      tags: [user]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+  /user/{id}:
+    get:
+      summary: Get user by id
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+    put:
+      summary: Edit user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/user'
+ 
+    delete:
+      summary: Delete user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  components:
+    schemas:
+  
+      offer:
+        type: object
+        properties:
+      
+          id:
+            type: number
+      address:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          unit:
+            type: string
+          streetname:
+            type: string
+          region:
+            type: string
+          postcode:
+            type: string
+          city:
+            type: string
+          country:
+            type: string
+      user:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          email:
+            type: string
+          gender:
+            type: string
+          age:
+            type: number
+          password:
+            type: string
